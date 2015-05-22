@@ -1,0 +1,16 @@
+Android Utils
+==============
+
+1、安卓原生字体:
+在4.0之前安卓提供"Sans"，"serif"和"monospace"三种字体.主要是DroidSansFallback.ttf（中文字体）、DroidSans.ttf（英文字体）、DroidSans-Bold.ttf（英文加粗字体）;
+后来Roboto字体成为Android 4.0 Ice Cream Sandwich及以后Android版本的默认字体。
+
+2、IntentService与Service的区别:
+(1)Service和应用程序在同一个进程中,不是一个线程,不能直接处理耗时的操作,否则会出现Application Not Responding异常.
+(2)IntentService是通过Handler looper message的方式实现了一个多线程的操作，同时耗时操作也可以被这个线程管理和执行，同时不会产生ANR的情况。
+
+3、在Manifest.xml 中添加<service />,并且添加<intent-filter>时出现Exported service does not require permission 警告.
+android:exported 这个属性用于指示该服务是否能够被其他应用程序组件调用或跟它交互。如果设置为true，则能够被调用或交互，否则不能。设置为false时，只有同一个应用程序的组件或带有相同用户ID的应用程序才能启动或绑定该服务。
+<service />中定义了intent-filter的话，android:exported属性值默认为true，而你的<service />定义中没有指定访问权限，其他程序不需要申请权限便可以启动这个service，因而有这个安全警告。
+
+4、
