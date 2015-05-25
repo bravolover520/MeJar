@@ -12,5 +12,3 @@ Android Utils
 3、在Manifest.xml 中添加<service />,并且添加<intent-filter>时出现Exported service does not require permission 警告.
 android:exported 这个属性用于指示该服务是否能够被其他应用程序组件调用或跟它交互。如果设置为true，则能够被调用或交互，否则不能。设置为false时，只有同一个应用程序的组件或带有相同用户ID的应用程序才能启动或绑定该服务。
 <service />中定义了intent-filter的话，android:exported属性值默认为true，而你的<service />定义中没有指定访问权限，其他程序不需要申请权限便可以启动这个service，因而有这个安全警告。
-
-4、
